@@ -28,5 +28,22 @@ namespace MvcCv.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
+
+        public ActionResult YetenekSil(int id)
+        {
+            var yetenek = repo.Find(x => x.ID == id);
+            repo.TDelete(yetenek);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult YetenekDuzenle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YetenekDuzenle()
+        {
+            return View();
+        }
     }
 }
