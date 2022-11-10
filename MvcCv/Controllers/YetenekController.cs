@@ -36,14 +36,19 @@ namespace MvcCv.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public ActionResult YetenekDuzenle()
+        public ActionResult YetenekDuzenle(int id)
         {
-            return View();
+            var yetenek = repo.Find(x => x.ID == id);
+            return View(yetenek);
         }
         [HttpPost]
-        public ActionResult YetenekDuzenle()
+        public ActionResult YetenekDuzenle(TblYeteneklerim t)
         {
-            return View();
+            var y = repo.Find(x => x.ID == t.ID);
+            y.Yetenek = t.Yetenek;
+            y.Oran = t.Oran;
+            repo.TUpdate(y);
+            return RedirectToAction("Index");
         }
     }
 }
