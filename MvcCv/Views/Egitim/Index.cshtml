@@ -27,8 +27,18 @@
             <td>@item.AltBaslik2</td>
             <td>@item.GNO</td>
             <td>@item.Tarih</td>
-            <td><a href="/Egitim/EgitimSil/@item.ID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Egitim/EgitimGetir/@item.ID" class="btn btn-warning">Düzenle</a></td>
+            <td>
+                <a href="/Egitimm/EgitimSil/@item.ID" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash-alt"></i>
+                    Sil
+                </a>
+            </td>
+            <td>
+                <a href="/Egitim/EgitimDuzenle/@item.ID" class="btn btn-info btn-sm">
+                    <i class="fas fa-pencil-alt"></i>
+                    Düzenle
+                </a>
+            </td>
         </tr>
     }
 </table>
