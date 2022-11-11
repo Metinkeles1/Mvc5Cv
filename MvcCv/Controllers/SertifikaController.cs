@@ -17,5 +17,20 @@ namespace MvcCv.Controllers
             var sertifika = repo.List();
             return View(sertifika);
         }
+        [HttpGet]
+        public ActionResult SertifikaGetir(int id)
+        {
+            var sertifika = repo.Find(x => x.ID == id);
+            return View(sertifika);
+        }
+        [HttpPost]
+        public ActionResult SertifikaGetir(TblSertifikalarim t)
+        {
+            TblSertifikalarim sertifika = repo.Find(x => x.ID == t.ID);
+            sertifika.Aciklama = t.Aciklama;
+            sertifika.Tarih = t.Tarih;
+            repo.TUpdate(sertifika);
+            return RedirectToAction("Index");
+        }
     }
 }
