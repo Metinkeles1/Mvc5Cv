@@ -18,6 +18,21 @@ namespace MvcCv.Controllers
             return View(sertifika);
         }
         [HttpGet]
+        public ActionResult SertifikaEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SertifikaEkle(TblSertifikalarim t)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("SertifikaEkle");
+            }
+            repo.TAdd(t);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
         public ActionResult SertifikaGetir(int id)
         {
             var sertifika = repo.Find(x => x.ID == id);
