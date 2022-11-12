@@ -32,6 +32,12 @@ namespace MvcCv.Controllers
             repo.TAdd(t);
             return RedirectToAction("Index");
         }
+        public ActionResult SertifikaSil(int id)
+        {
+            var sertifika = repo.Find(x => x.ID == id);
+            repo.TDelete(sertifika);
+            return RedirectToAction("Index");
+        }
         [HttpGet]
         public ActionResult SertifikaGetir(int id)
         {
