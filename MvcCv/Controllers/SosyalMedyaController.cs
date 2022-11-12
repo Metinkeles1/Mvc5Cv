@@ -28,5 +28,35 @@ namespace MvcCv.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
+        public ActionResult HesapSil(int id)
+        {
+            var hesap = repo.Find(x => x.ID == id);
+            repo.TDelete(hesap);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult SosyalMedyaGetir(int id)
+        {
+            var sosyalmedya = repo.Find(x => x.ID == id);
+            return View(sosyalmedya);
+        }
+        [HttpPost]
+        public ActionResult SosyalMedyaGetir(TblSosyalMedya t)
+        {
+            var sosyalmedya = repo.Find(x => x.ID == t.ID);
+            sosyalmedya.Ad = t.Ad;
+            sosyalmedya.Durum = true;
+            sosyalmedya.Link = t.Link;
+            sosyalmedya.Ikon = t.Ikon;
+            repo.TUpdate(sosyalmedya);
+            return RedirectToAction("Index");
+        }
+        public ActionResult Sil(int id)
+        {
+            var hesap = repo.Find(x => x.ID == id);
+            hesap.Durum = false;
+            repo.TUpdate(hesap);
+            return RedirectToAction("Index");
+        }
     }
 }
