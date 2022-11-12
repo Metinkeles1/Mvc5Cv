@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace MvcCv.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
