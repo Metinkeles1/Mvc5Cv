@@ -54,7 +54,8 @@ namespace MvcCv.Controllers
         }
         public PartialViewResult Projelerim()
         {
-            return PartialView();
+            var projeler = db.TblProjelerim.ToList();
+            return PartialView(projeler);
         }
         [HttpGet]
         public PartialViewResult iletisim()

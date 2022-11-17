@@ -198,6 +198,7 @@
     <Compile Include="Repositories\HakkimdaRepository.cs" />
     <Compile Include="Repositories\HobiRepository.cs" />
     <Compile Include="Repositories\IletisimRepository.cs" />
+    <Compile Include="Repositories\ProjeRepository.cs" />
     <Compile Include="Repositories\SertifikaRepository.cs" />
     <Compile Include="Repositories\YetenekRepository.cs" />
   </ItemGroup>
