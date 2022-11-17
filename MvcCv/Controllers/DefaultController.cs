@@ -52,6 +52,10 @@ namespace MvcCv.Controllers
             var sertifikalar = db.TblSertifikalarim.ToList();
             return PartialView(sertifikalar);
         }
+        public PartialViewResult Projelerim()
+        {
+            return PartialView();
+        }
         [HttpGet]
         public PartialViewResult iletisim()
         {

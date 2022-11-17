@@ -26,10 +26,10 @@ namespace MvcCv.Controllers
             {
                 FormsAuthentication.SetAuthCookie(bilgi.KullaniciAdi, false);
                 Session["KullaniciAdi"] = bilgi.KullaniciAdi.ToString();
-                return RedirectToAction("Index", "Deneyim");
+                return RedirectToAction("Index", "Hakkimda");
             }
             else
-            {
+            {                
                 return RedirectToAction("Index","Login");
             }
         }

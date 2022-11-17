@@ -139,6 +139,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProjeController.cs" />
     <Compile Include="Controllers\SertifikaController.cs" />
     <Compile Include="Controllers\SosyalMedyaController.cs" />
     <Compile Include="Controllers\YetenekController.cs" />
@@ -176,6 +177,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TblIletisim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblProjelerim.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TblSertifikalarim.cs">
@@ -2491,9 +2495,11 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\AdminEkle.cshtml" />
     <Content Include="Views\Admin\AdminDuzenle.cshtml" />
+    <Content Include="Views\Default\Projelerim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Proje\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

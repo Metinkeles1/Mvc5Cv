@@ -66,6 +66,19 @@
           <Property Name="Mesaj" Type="varchar" MaxLength="1000" />
           <Property Name="Tarih" Type="date" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbCv.dbo.TblProjelerim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblProjelerim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjeName" Type="varchar" MaxLength="50" />
+          <Property Name="ProjeAciklama" Type="varchar" MaxLength="100" />
+          <Property Name="ProjeResim1" Type="varchar" MaxLength="50" />
+          <Property Name="ProjeResim2" Type="varchar" MaxLength="50" />
+          <Property Name="ProjeResim3" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TblSertifikalarim">
           <Key>
             <PropertyRef Name="ID" />
@@ -102,6 +115,16 @@
           <EntitySet Name="TblSertifikalarim" EntityType="Self.TblSertifikalarim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSosyalMedya" EntityType="Self.TblSosyalMedya" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProjelerim" EntityType="Self.TblProjelerim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblProjelerim].[id] AS [id], 
+    [TblProjelerim].[ProjeName] AS [ProjeName], 
+    [TblProjelerim].[ProjeAciklama] AS [ProjeAciklama], 
+    [TblProjelerim].[ProjeResim1] AS [ProjeResim1], 
+    [TblProjelerim].[ProjeResim2] AS [ProjeResim2], 
+    [TblProjelerim].[ProjeResim3] AS [ProjeResim3]
+    FROM [dbo].[TblProjelerim] AS [TblProjelerim]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -194,6 +217,7 @@
           <EntitySet Name="TblSertifikalarim" EntityType="Self.TblSertifikalarim" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" />
           <EntitySet Name="TblSosyalMedya" EntityType="DbCvModel.TblSosyalMedya" />
+          <EntitySet Name="TblProjelerim" EntityType="DbCvModel.TblProjelerim" />
         </EntityContainer>
         <EntityType Name="TblSosyalMedya">
           <Key>
@@ -204,6 +228,17 @@
           <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Ikon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Durum" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblProjelerim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProjeAciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProjeResim1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProjeResim2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProjeResim3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -304,6 +339,18 @@
                 <ScalarProperty Name="Link" ColumnName="Link" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProjelerim">
+            <EntityTypeMapping TypeName="DbCvModel.TblProjelerim">
+              <MappingFragment StoreEntitySet="TblProjelerim">
+                <ScalarProperty Name="ProjeResim3" ColumnName="ProjeResim3" />
+                <ScalarProperty Name="ProjeResim2" ColumnName="ProjeResim2" />
+                <ScalarProperty Name="ProjeResim1" ColumnName="ProjeResim1" />
+                <ScalarProperty Name="ProjeAciklama" ColumnName="ProjeAciklama" />
+                <ScalarProperty Name="ProjeName" ColumnName="ProjeName" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
