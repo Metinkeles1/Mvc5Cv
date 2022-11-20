@@ -78,6 +78,7 @@
           <Property Name="ProjeResim2Açıklama" Type="varchar" MaxLength="500" />
           <Property Name="ProjeResim3" Type="varchar" MaxLength="50" />
           <Property Name="ProjeResim3Açıklama" Type="varchar" MaxLength="500" />
+          <Property Name="ProjeLink" Type="varchar" MaxLength="100" />
           <Property Name="Tarih" Type="date" />
         </EntityType>
         <EntityType Name="TblSertifikalarim">
@@ -234,6 +235,7 @@
           <Property Name="ProjeResim3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ProjeResim3Açıklama" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="Tarih" Type="DateTime" Precision="0" />
+          <Property Name="ProjeLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -340,6 +342,7 @@
           <EntitySetMapping Name="TblProjelerim">
             <EntityTypeMapping TypeName="DbCvModel.TblProjelerim">
               <MappingFragment StoreEntitySet="TblProjelerim">
+                <ScalarProperty Name="ProjeLink" ColumnName="ProjeLink" />
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="ProjeResim3Açıklama" ColumnName="ProjeResim3Açıklama" />
                 <ScalarProperty Name="ProjeResim3" ColumnName="ProjeResim3" />

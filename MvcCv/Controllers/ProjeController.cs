@@ -12,7 +12,7 @@ namespace MvcCv.Controllers
     public class ProjeController : Controller
     {        
         // GET: Proje
-        ProjeRepository repo = new ProjeRepository();
+        ProjeRepository repo = new ProjeRepository();        
         public ActionResult Index()
         {
             var proje = repo.List();
@@ -20,7 +20,7 @@ namespace MvcCv.Controllers
         }
         public PartialViewResult ProjeDetay(int id)
         {
-            var proje = repo.Find(x => x.id == id);
+            var proje = repo.Find(x => x.id == id);           
             return PartialView(proje);
         }
         [HttpGet]
@@ -61,9 +61,10 @@ namespace MvcCv.Controllers
             proje.ProjeResim2Açıklama = t.ProjeResim2Açıklama;
             proje.ProjeResim3 = t.ProjeResim3;
             proje.ProjeResim3Açıklama = t.ProjeResim3Açıklama;
+            proje.ProjeLink = t.ProjeLink;
             proje.Tarih = t.Tarih;
             repo.TUpdate(proje);
             return RedirectToAction("Index");
-        }
+        }        
     }
 }
