@@ -11,14 +11,22 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblProjelerim
     {
-        public int id { get; set; }
+        public int id { get; set; }        
+        [Required(ErrorMessage="Proje İsmini Boş Geçmeyin")]
         public string ProjeName { get; set; }
+        [Required(ErrorMessage = "Proje Açıklaması Giriniz")]
+        [StringLength(1000, MinimumLength =150, ErrorMessage= "Proje Açıklaması En az 150 karakter olmalıdır.")]
         public string ProjeAciklama { get; set; }
+        [Required(ErrorMessage = "Proje Resmi Ekleyiniz")]
         public string ProjeResim1 { get; set; }
         public string ProjeResim2 { get; set; }
+        public string ProjeResim2Açıklama { get; set; }
         public string ProjeResim3 { get; set; }
+        public string ProjeResim3Açıklama { get; set; }
+        public Nullable<System.DateTime> Tarih { get; set; }
     }
 }

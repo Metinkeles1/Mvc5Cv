@@ -1,17 +1,25 @@
 ﻿@using MvcCv.Models.Entity
 @model List<TblProjelerim>
 
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach (var item in Model)
-    {    
+    {
         <div class="col">
             <div class="card">
                 <img src="@item.ProjeResim1" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">@item.ProjeName</h5>
-                    <p class="card-text">@item.ProjeAciklama</p>
+                    <h4 class="card-title">@item.ProjeName</h4>
+                    <p class="card-text">@item.ProjeAciklama.Substring(0, item.ProjeAciklama.Substring(0, 150).LastIndexOf(" "))...</p>
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-success text-white" href="/Proje/ProjeDetay/@item.id">Detayları Gör</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
             </div>
-        </div>         
+        </div>
     }
 </div>
+     

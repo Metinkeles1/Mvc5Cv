@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcCv.Models.Entity;
+using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
@@ -11,7 +12,7 @@ namespace MvcCv.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
-        DbCvEntities db = new DbCvEntities();
+        DbCvEntities db = new DbCvEntities();        
         public ActionResult Index()
         {
             var degerler = db.TblHakkimda.ToList();
@@ -51,12 +52,7 @@ namespace MvcCv.Controllers
         {
             var sertifikalar = db.TblSertifikalarim.ToList();
             return PartialView(sertifikalar);
-        }
-        public PartialViewResult Projelerim()
-        {
-            var projeler = db.TblProjelerim.ToList();
-            return PartialView(projeler);
-        }
+        }      
         [HttpGet]
         public PartialViewResult iletisim()
         {
@@ -70,5 +66,10 @@ namespace MvcCv.Controllers
             db.SaveChanges();
             return PartialView();
         }
+        public PartialViewResult Projelerim()
+        {
+            var projeler = db.TblProjelerim.ToList();
+            return PartialView(projeler);
+        }       
     }
 }

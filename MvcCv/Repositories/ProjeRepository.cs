@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MvcCv.Repositories
 {
-    public class ProjeRepository:GenericRepository<TblProjelerim>
+    public class ProjeRepository : GenericRepository<TblProjelerim>
     {
     }
 }
