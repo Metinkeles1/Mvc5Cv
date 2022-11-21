@@ -52,8 +52,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Aciklama1" Type="varchar" MaxLength="500" />
-          <Property Name="Aciklama2" Type="varchar" MaxLength="500" />
+          <Property Name="Aciklama1" Type="varchar" MaxLength="1500" />
+          <Property Name="Aciklama2" Type="varchar" MaxLength="1500" />
         </EntityType>
         <EntityType Name="TblIletisim">
           <Key>
@@ -170,8 +170,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Aciklama1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Aciklama2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama1" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama2" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TblIletisim">
           <Key>
