@@ -28,12 +28,12 @@ namespace MvcCv.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
-        public ActionResult HesapSil(int id)
-        {
-            var hesap = repo.Find(x => x.ID == id);
-            repo.TDelete(hesap);
-            return RedirectToAction("Index");
-        }
+        //public ActionResult HesapSil(int id)
+        //{
+        //    var hesap = repo.Find(x => x.ID == id);
+        //    repo.TDelete(hesap);
+        //    return RedirectToAction("Index");
+        //}
         [HttpGet]
         public ActionResult SosyalMedyaGetir(int id)
         {

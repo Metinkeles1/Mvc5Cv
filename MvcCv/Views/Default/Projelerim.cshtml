@@ -1,13 +1,15 @@
 ﻿@using MvcCv.Models.Entity
-@model List<TblProjelerim>
-
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TblProjelerim>
+@*@model List<TblProjelerim>*@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach (var item in Model)
     {
         <div class="col">
             <div class="card">
-                <img src="@item.ProjeResim1" class="card-img-top">
+                <img src="@item.ProjeResim1" class="card-img-top" style="object-fit:cover">
                 <div class="card-body">
                     <h4 class="card-title">@item.ProjeName</h4>
                     <p class="card-text">@item.ProjeAciklama.Substring(0, item.ProjeAciklama.Substring(0, 150).LastIndexOf(" "))...</p>
@@ -21,5 +23,13 @@
             </div>
         </div>
     }
+
 </div>
-     
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Projelerim", new { sayfa }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})
+
+

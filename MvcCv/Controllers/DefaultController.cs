@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MvcCv.Models.Entity;
 using MvcCv.Repositories;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcCv.Controllers
 {
@@ -66,9 +68,10 @@ namespace MvcCv.Controllers
             db.SaveChanges();
             return PartialView();
         }
-        public PartialViewResult Projelerim()
+        public PartialViewResult Projelerim(int sayfa=1)
         {
-            var projeler = db.TblProjelerim.ToList();
+            //var projeler = db.TblProjelerim.ToList();
+            var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);
             return PartialView(projeler);
         }       
     }

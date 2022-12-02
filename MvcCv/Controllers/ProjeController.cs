@@ -12,7 +12,8 @@ namespace MvcCv.Controllers
     public class ProjeController : Controller
     {        
         // GET: Proje
-        ProjeRepository repo = new ProjeRepository();        
+        ProjeRepository repo = new ProjeRepository();
+        MesajlarRepository msjrepo = new MesajlarRepository();
         public ActionResult Index()
         {
             var proje = repo.List();
@@ -65,6 +66,17 @@ namespace MvcCv.Controllers
             proje.Tarih = t.Tarih;
             repo.TUpdate(proje);
             return RedirectToAction("Index");
-        }        
+        }
+        [HttpGet]
+        public PartialViewResult ProjeYorumlar()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult ProjeYorumlar(TblMesajlar p)
+        {
+            msjrepo.TAdd(p);
+            return PartialView();
+        }
     }
 }
