@@ -17,7 +17,7 @@
         <EntityTypeShape EntityType="DbCvModel.TblProjelerim" Width="1.5" PointX="3" PointY="7" />
         <EntityTypeShape EntityType="DbCvModel.sysdiagrams" Width="1.5" PointX="9.375" PointY="6.75" />
         <EntityTypeShape EntityType="DbCvModel.TblMesajlar" Width="1.5" PointX="0.5" PointY="7.5" />
-        <AssociationConnector Association="DbCvModel.FK_TblProjelerim_TblMesajlar" />
+        <AssociationConnector Association="DbCvModel.FK_TblMesajlar_TblProjelerim" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

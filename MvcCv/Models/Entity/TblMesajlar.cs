@@ -14,19 +14,13 @@ namespace MvcCv.Models.Entity
     
     public partial class TblMesajlar
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TblMesajlar()
-        {
-            this.TblProjelerim = new HashSet<TblProjelerim>();
-        }
-    
         public int Id { get; set; }
         public string AdSoyad { get; set; }
         public string Mail { get; set; }
         public string Konu { get; set; }
         public string Icerik { get; set; }
+        public Nullable<int> ProjeId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblProjelerim> TblProjelerim { get; set; }
+        public virtual TblProjelerim TblProjelerim { get; set; }
     }
 }

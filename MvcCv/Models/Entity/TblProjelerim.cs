@@ -14,6 +14,12 @@ namespace MvcCv.Models.Entity
     
     public partial class TblProjelerim
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblProjelerim()
+        {
+            this.TblMesajlar = new HashSet<TblMesajlar>();
+        }
+    
         public int id { get; set; }
         public string ProjeName { get; set; }
         public string ProjeAciklama { get; set; }
@@ -26,6 +32,7 @@ namespace MvcCv.Models.Entity
         public string ProjeLink { get; set; }
         public Nullable<int> ProjeYorum { get; set; }
     
-        public virtual TblMesajlar TblMesajlar { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblMesajlar> TblMesajlar { get; set; }
     }
 }

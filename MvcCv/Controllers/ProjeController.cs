@@ -14,6 +14,7 @@ namespace MvcCv.Controllers
         // GET: Proje
         ProjeRepository repo = new ProjeRepository();
         MesajlarRepository msjrepo = new MesajlarRepository();
+
         public ActionResult Index()
         {
             var proje = repo.List();
@@ -68,8 +69,10 @@ namespace MvcCv.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public PartialViewResult ProjeYorumlar()
+        public PartialViewResult ProjeYorumlar(int id)
         {
+            var projeid = id;
+            ViewBag.projeid = projeid;
             return PartialView();
         }
         [HttpPost]

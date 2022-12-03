@@ -85,6 +85,7 @@
           <Property Name="Mail" Type="varchar" MaxLength="50" />
           <Property Name="Konu" Type="varchar" MaxLength="50" />
           <Property Name="Icerik" Type="varchar(max)" />
+          <Property Name="ProjeId" Type="int" />
         </EntityType>
         <EntityType Name="TblProjelerim">
           <Key>
@@ -128,15 +129,15 @@
           <Property Name="Yetenek" Type="varchar" MaxLength="100" />
           <Property Name="Oran" Type="tinyint" />
         </EntityType>
-        <Association Name="FK_TblProjelerim_TblMesajlar">
-          <End Role="TblMesajlar" Type="Self.TblMesajlar" Multiplicity="0..1" />
-          <End Role="TblProjelerim" Type="Self.TblProjelerim" Multiplicity="*" />
+        <Association Name="FK_TblMesajlar_TblProjelerim">
+          <End Role="TblProjelerim" Type="Self.TblProjelerim" Multiplicity="0..1" />
+          <End Role="TblMesajlar" Type="Self.TblMesajlar" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TblMesajlar">
-              <PropertyRef Name="Id" />
+            <Principal Role="TblProjelerim">
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="TblProjelerim">
-              <PropertyRef Name="ProjeYorum" />
+            <Dependent Role="TblMesajlar">
+              <PropertyRef Name="ProjeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -153,9 +154,9 @@
           <EntitySet Name="TblSertifikalarim" EntityType="Self.TblSertifikalarim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSosyalMedya" EntityType="Self.TblSosyalMedya" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_TblProjelerim_TblMesajlar" Association="Self.FK_TblProjelerim_TblMesajlar">
-            <End Role="TblMesajlar" EntitySet="TblMesajlar" />
+          <AssociationSet Name="FK_TblMesajlar_TblProjelerim" Association="Self.FK_TblMesajlar_TblProjelerim">
             <End Role="TblProjelerim" EntitySet="TblProjelerim" />
+            <End Role="TblMesajlar" EntitySet="TblMesajlar" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -252,9 +253,9 @@
           <EntitySet Name="TblProjelerim" EntityType="DbCvModel.TblProjelerim" />
           <EntitySet Name="sysdiagrams" EntityType="DbCvModel.sysdiagrams" />
           <EntitySet Name="TblMesajlar" EntityType="DbCvModel.TblMesajlar" />
-          <AssociationSet Name="FK_TblProjelerim_TblMesajlar" Association="DbCvModel.FK_TblProjelerim_TblMesajlar">
-            <End Role="TblMesajlar" EntitySet="TblMesajlar" />
+          <AssociationSet Name="FK_TblMesajlar_TblProjelerim" Association="DbCvModel.FK_TblMesajlar_TblProjelerim">
             <End Role="TblProjelerim" EntitySet="TblProjelerim" />
+            <End Role="TblMesajlar" EntitySet="TblMesajlar" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="TblSosyalMedya">
@@ -282,7 +283,7 @@
           <Property Name="Tarih" Type="DateTime" Precision="0" />
           <Property Name="ProjeLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ProjeYorum" Type="Int32" />
-          <NavigationProperty Name="TblMesajlar" Relationship="DbCvModel.FK_TblProjelerim_TblMesajlar" FromRole="TblProjelerim" ToRole="TblMesajlar" />
+          <NavigationProperty Name="TblMesajlar" Relationship="DbCvModel.FK_TblMesajlar_TblProjelerim" FromRole="TblProjelerim" ToRole="TblMesajlar" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -303,17 +304,18 @@
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TblProjelerim" Relationship="DbCvModel.FK_TblProjelerim_TblMesajlar" FromRole="TblMesajlar" ToRole="TblProjelerim" />
+          <Property Name="ProjeId" Type="Int32" />
+          <NavigationProperty Name="TblProjelerim" Relationship="DbCvModel.FK_TblMesajlar_TblProjelerim" FromRole="TblMesajlar" ToRole="TblProjelerim" />
         </EntityType>
-        <Association Name="FK_TblProjelerim_TblMesajlar">
-          <End Type="DbCvModel.TblMesajlar" Role="TblMesajlar" Multiplicity="0..1" />
-          <End Type="DbCvModel.TblProjelerim" Role="TblProjelerim" Multiplicity="*" />
+        <Association Name="FK_TblMesajlar_TblProjelerim">
+          <End Type="DbCvModel.TblProjelerim" Role="TblProjelerim" Multiplicity="0..1" />
+          <End Type="DbCvModel.TblMesajlar" Role="TblMesajlar" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TblMesajlar">
-              <PropertyRef Name="Id" />
+            <Principal Role="TblProjelerim">
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="TblProjelerim">
-              <PropertyRef Name="ProjeYorum" />
+            <Dependent Role="TblMesajlar">
+              <PropertyRef Name="ProjeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -450,6 +452,7 @@
           <EntitySetMapping Name="TblMesajlar">
             <EntityTypeMapping TypeName="DbCvModel.TblMesajlar">
               <MappingFragment StoreEntitySet="TblMesajlar">
+                <ScalarProperty Name="ProjeId" ColumnName="ProjeId" />
                 <ScalarProperty Name="Icerik" ColumnName="Icerik" />
                 <ScalarProperty Name="Konu" ColumnName="Konu" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
