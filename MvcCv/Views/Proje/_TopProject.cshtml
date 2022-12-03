@@ -12,7 +12,7 @@
             {
                 <div class="blog-grids row mb-3">
                     <div class="col-md-5 blog-grid-left">
-                        <a href="single.html">
+                        <a href="/proje/ProjeDetay/@item.id/">
                             <img src="@item.ProjeResim1" class="img-fluid" alt="">
                         </a>
                     </div>
@@ -23,7 +23,10 @@
                         </h5>
                         <div class="sub-meta">
                             <span>
-                                <i class="far fa-clock"></i> @item.Tarih
+                                <i class="far fa-clock"></i> @Convert.ToDateTime(item.Tarih).ToString("dd/MM/yyyy") &nbsp;
+                            </span>                            
+                            <span>
+                                <i class="far fa-thumbs-up"></i> @item.ProjeBegeniSayisi
                             </span>
                         </div>
                     </div>

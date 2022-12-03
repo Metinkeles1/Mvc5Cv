@@ -76,7 +76,8 @@ namespace MvcCv.Controllers
         //}       
         public ActionResult Projelerim(int sayfa = 1)
         {
-            var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);            
+            //var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);
+            var projeler = db.TblProjelerim.ToList();
             return View(projeler);
         }
     }

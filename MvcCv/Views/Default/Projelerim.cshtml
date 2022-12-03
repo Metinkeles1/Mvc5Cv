@@ -1,7 +1,8 @@
 ﻿@using MvcCv.Models.Entity
-@using PagedList
+@model List<TblProjelerim>
+@*@using PagedList
 @using PagedList.Mvc
-@model PagedList.IPagedList<TblProjelerim>
+@model PagedList.IPagedList<TblProjelerim>*@
 
 @{
     Layout = null;
@@ -29,11 +30,11 @@
 
 </div>
 
-@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Projelerim", new { sayfa }), new PagedListRenderOptions
+@*@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Projelerim", new { sayfa }), new PagedListRenderOptions
 {
     LiElementClasses = new List<string>
     { "page-link"}
-})
+})*@
 
 
 

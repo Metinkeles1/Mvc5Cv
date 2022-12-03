@@ -68,11 +68,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="blog-grid-top">
                         <div class="b-grid-top">
                             <div class="blog_info_left_grid">
-                                <a href="single.html">
+                                <a href="#">
                                     <img src="@Model.ProjeResim1" class="img-fluid h-100" alt="">
                                 </a>
                             </div>
-                            <div class="blog-info-middle">
+                            <div class="blog-info-middle list-example">
                                 <ul>
                                     <li>
                                         <a href="#">
@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="#comments">
                                             <i class="far fa-comment"></i> @ViewBag.mesajSayisi Comments
                                         </a>
                                     </li>
@@ -120,8 +120,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>Github Linki</span>
                         </div>
                     </div>
-                    @Html.Action("_YorumListesi")
-
+                    <div id="comments">
+                        @Html.Action("_YorumListesi")
+                    </div>
                     @Html.Action("_ProjeYorumlar")
                 </div>
 
@@ -150,6 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 }, 900);
             });
         });
+
     </script>
     <!--// end-smoth-scrolling -->
 
