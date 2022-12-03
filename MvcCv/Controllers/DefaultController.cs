@@ -68,11 +68,16 @@ namespace MvcCv.Controllers
             db.SaveChanges();
             return PartialView();
         }
-        public PartialViewResult Projelerim(int sayfa=1)
+        //public PartialViewResult Projelerim(int sayfa=1)
+        //{
+        //    //var projeler = db.TblProjelerim.ToList();
+        //    var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);
+        //    return PartialView(projeler);
+        //}       
+        public ActionResult Projelerim(int sayfa = 1)
         {
-            //var projeler = db.TblProjelerim.ToList();
-            var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);
-            return PartialView(projeler);
-        }       
+            var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);            
+            return View(projeler);
+        }
     }
 }

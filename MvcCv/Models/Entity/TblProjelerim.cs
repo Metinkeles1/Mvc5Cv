@@ -30,7 +30,7 @@ namespace MvcCv.Models.Entity
         public string ProjeResim3Açıklama { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
         public string ProjeLink { get; set; }
-        public Nullable<int> ProjeYorum { get; set; }
+        public Nullable<int> ProjeBegeniSayisi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblMesajlar> TblMesajlar { get; set; }

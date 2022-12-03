@@ -1,0 +1,19 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblMesajlar>
+
+
+<div class="comment-top">
+    <h4>Yorumlar</h4>
+    @foreach (var item in Model)
+    {
+<div class="media">    
+    <img src="~/CoreBlogTema-main/web/images/2.png" alt="" class="img-fluid" style="width: 70px; height:auto" />
+    <div class="media-body">
+        <h5 class="mt-0 text-capitalize">@item.AdSoyad</h5>
+        <p>
+            @item.Icerik
+        </p>
+    </div>
+</div>
+    }
+</div>

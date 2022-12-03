@@ -255,7 +255,7 @@
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.pages.min.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.min.css" />
-    <Content Include="AdminLTE-3.0.4\dist\img\2.png" />
+    <Content Include="CoreBlogTema-main\web\images\2.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\4.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\AdminLTELogo.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar.png" />
@@ -2076,7 +2076,7 @@
     <Content Include="CoreBlogTema-main\web\css\single.css" />
     <Content Include="CoreBlogTema-main\web\css\style.css" />
     <Content Include="CoreBlogTema-main\web\images\1.jpg" />
-    <Content Include="CoreBlogTema-main\web\images\2.jpg" />
+    <Content Include="CoreBlogTema-main\web\images\21.jpg" />
     <Content Include="CoreBlogTema-main\web\images\3.jpg" />
     <Content Include="CoreBlogTema-main\web\images\4.jpg" />
     <Content Include="CoreBlogTema-main\web\images\5.jpg" />
@@ -2587,16 +2587,17 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\AdminEkle.cshtml" />
     <Content Include="Views\Admin\AdminDuzenle.cshtml" />
-    <Content Include="Views\Default\Projelerim.cshtml" />
-    <Content Include="Views\Proje\ProjeDetay.cshtml" />
     <Content Include="Views\Proje\ProjeGetir.cshtml" />
     <Content Include="Views\Proje\Index.cshtml" />
     <Content Include="Views\Proje\ProjeEkle.cshtml" />
-    <Content Include="Views\Proje\ProjeYorumlar.cshtml" />
+    <Content Include="Views\Proje\_ProjeYorumlar.cshtml" />
+    <Content Include="Views\Proje\_YorumListesi.cshtml" />
+    <Content Include="Views\Proje\_TopProject.cshtml" />
+    <Content Include="Views\Proje\ProjeDetay.cshtml" />
+    <Content Include="Views\Default\Projelerim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ProjeMesaj\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

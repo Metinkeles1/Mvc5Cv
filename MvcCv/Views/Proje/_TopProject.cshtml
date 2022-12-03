@@ -1,0 +1,35 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblProjelerim>
+
+<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+    <div class="right-blog-info text-left">
+        @*<div class="h4 d-flex justify-content-center">Proje Resimleri</div>
+            <img src="@Model.ProjeResim2" class="img-fluid" alt="">*@
+        <div class="tech-btm">
+            <h4>En Çok Beğeni Alan Projeler</h4>
+
+            @foreach (var item in Model)
+            {
+                <div class="blog-grids row mb-3">
+                    <div class="col-md-5 blog-grid-left">
+                        <a href="single.html">
+                            <img src="@item.ProjeResim1" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-7 blog-grid-right">
+
+                        <h5>
+                            <a href="/Proje/ProjeDetay/@item.id">@item.ProjeName </a>
+                        </h5>
+                        <div class="sub-meta">
+                            <span>
+                                <i class="far fa-clock"></i> @item.Tarih
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</aside>

@@ -2,7 +2,10 @@
 @using PagedList
 @using PagedList.Mvc
 @model PagedList.IPagedList<TblProjelerim>
-@*@model List<TblProjelerim>*@
+
+@{
+    Layout = null;
+}
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach (var item in Model)
@@ -31,5 +34,7 @@
     LiElementClasses = new List<string>
     { "page-link"}
 })
+
+
 
 

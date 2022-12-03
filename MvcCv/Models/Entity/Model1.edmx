@@ -101,7 +101,7 @@
           <Property Name="ProjeResim3Açıklama" Type="varchar" MaxLength="500" />
           <Property Name="ProjeLink" Type="varchar" MaxLength="100" />
           <Property Name="Tarih" Type="date" />
-          <Property Name="ProjeYorum" Type="int" />
+          <Property Name="ProjeBegeniSayisi" Type="int" />
         </EntityType>
         <EntityType Name="TblSertifikalarim">
           <Key>
@@ -282,8 +282,8 @@
           <Property Name="ProjeResim3Açıklama" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="Tarih" Type="DateTime" Precision="0" />
           <Property Name="ProjeLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ProjeYorum" Type="Int32" />
           <NavigationProperty Name="TblMesajlar" Relationship="DbCvModel.FK_TblMesajlar_TblProjelerim" FromRole="TblProjelerim" ToRole="TblMesajlar" />
+          <Property Name="ProjeBegeniSayisi" Type="Int32" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -424,7 +424,7 @@
           <EntitySetMapping Name="TblProjelerim">
             <EntityTypeMapping TypeName="DbCvModel.TblProjelerim">
               <MappingFragment StoreEntitySet="TblProjelerim">
-                <ScalarProperty Name="ProjeYorum" ColumnName="ProjeYorum" />
+                <ScalarProperty Name="ProjeBegeniSayisi" ColumnName="ProjeBegeniSayisi" />
                 <ScalarProperty Name="ProjeLink" ColumnName="ProjeLink" />
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="ProjeResim3Açıklama" ColumnName="ProjeResim3Açıklama" />

@@ -1,5 +1,9 @@
 ﻿@model MvcCv.Models.Entity.TblProjelerim
 
+@{
+    Layout = null;
+}
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -46,8 +50,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 Home
                                 <span class="sr-only">(current)</span>
                             </a>
-                        </li>                                       
-                    </ul>                   
+                        </li>
+                    </ul>
                 </div>
             </nav>
 
@@ -76,13 +80,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </a>
                                     </li>
                                     <li class="mx-2">
-                                        <a href="#">
-                                            <i class="far fa-thumbs-up"></i> 201 Likes
+                                        <a href="#" id="projeLikesCount">
+                                            <i class="far fa-thumbs-up"></i> @Model.ProjeBegeniSayisi Likes
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="far fa-comment"></i> 15 Comments
+                                            <i class="far fa-comment"></i> @ViewBag.mesajSayisi Comments
                                         </a>
                                     </li>
 
@@ -116,58 +120,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>Github Linki</span>
                         </div>
                     </div>
-                  @Html.Action("ProjeMesaj","ProjeYorumlar", new { area = "" })
+                    @Html.Action("_YorumListesi")
+
+                    @Html.Action("_ProjeYorumlar")
                 </div>
 
                 <!--//left-->
                 <!--right-->
-                <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
-                    <div class="right-blog-info text-left">
-                        @*<div class="h4 d-flex justify-content-center">Proje Resimleri</div>
-            <img src="@Model.ProjeResim2" class="img-fluid" alt="">*@
-                        <div class="tech-btm">
-                            <h4>Top stories of the week</h4>
-
-                            <div class="blog-grids row mb-3">
-                                <div class="col-md-5 blog-grid-left">
-                                    <a href="single.html">
-                                        <img src="~/CoreBlogTema-main/web/images/1.jpg" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-                                <div class="col-md-7 blog-grid-right">
-
-                                    <h5>
-                                        <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                    </h5>
-                                    <div class="sub-meta">
-                                        <span>
-                                            <i class="far fa-clock"></i> 20 Jan, 2018
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="blog-grids row mb-3">
-                                <div class="col-md-5 blog-grid-left">
-                                    <a href="single.html">
-                                        <img src="~/CoreBlogTema-main/web/images/6.jpg" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-                                <div class="col-md-7 blog-grid-right">
-                                    <h5>
-                                        <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                    </h5>
-                                    <div class="sub-meta">
-                                        <span>
-                                            <i class="far fa-clock"></i> 20 Feb, 2018
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>              
-                </aside>
+                @Html.Action("_TopProject")
                 <!--//right-->
             </div>
         </div>
@@ -207,8 +167,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             $().UItoTop({
                 easingType: 'easeOutQuart'
             });
-
         });
+
     </script>
     <a href="#home" class="scroll" id="toTop" style="display: block;">
         <span id="toTopHover" style="opacity: 1;"> </span>

@@ -14,16 +14,18 @@ namespace MvcCv.Controllers
         // GET: Proje
         ProjeRepository repo = new ProjeRepository();
         MesajlarRepository msjrepo = new MesajlarRepository();
-
+        DbCvEntities db = new DbCvEntities();
         public ActionResult Index()
         {
-            var proje = repo.List();
+            var proje = repo.List();            
             return View(proje);
         }
-        public PartialViewResult ProjeDetay(int id)
+        public ActionResult ProjeDetay(int id)
         {
-            var proje = repo.Find(x => x.id == id);           
-            return PartialView(proje);
+            var proje = repo.Find(x => x.id == id);            
+            var deger = db.TblMesajlar.Where(x => x.ProjeId == id).Count();
+            ViewBag.mesajSayisi = deger;
+            return View(proje);
         }
         [HttpGet]
         public ActionResult ProjeEkle()
@@ -69,17 +71,27 @@ namespace MvcCv.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public PartialViewResult ProjeYorumlar(int id)
+        public PartialViewResult _ProjeYorumlar(int id)
         {
             var projeid = id;
             ViewBag.projeid = projeid;
             return PartialView();
         }
         [HttpPost]
-        public PartialViewResult ProjeYorumlar(TblMesajlar p)
+        public PartialViewResult _ProjeYorumlar(TblMesajlar p)
         {
             msjrepo.TAdd(p);
             return PartialView();
+        }
+        public PartialViewResult _YorumListesi(int id)
+        {
+            var yorumlar = msjrepo.List().FindAll(x=>x.ProjeId == id);            
+            return PartialView(yorumlar);
+        }
+        public PartialViewResult _TopProject()
+        {
+            var enIyiProjeler = db.TblProjelerim.OrderByDescending(x => x.ProjeBegeniSayisi).ToList();
+            return PartialView(enIyiProjeler);
         }
     }
 }
