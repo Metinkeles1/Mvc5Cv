@@ -1,6 +1,7 @@
 ﻿@using MvcCv.Models.Entity
 @model List<TblProjelerim>
 
+
 <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
     <div class="right-blog-info text-left">
         @*<div class="h4 d-flex justify-content-center">Proje Resimleri</div>
@@ -24,10 +25,10 @@
                         <div class="sub-meta">
                             <span>
                                 <i class="far fa-clock"></i> @Convert.ToDateTime(item.Tarih).ToString("dd/MM/yyyy") &nbsp;
-                            </span>                            
+                            </span>
                             <span>
                                 <i class="far fa-thumbs-up"></i> @item.ProjeBegeniSayisi
-                            </span>
+                            </span>                            
                         </div>
                     </div>
 

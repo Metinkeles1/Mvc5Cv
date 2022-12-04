@@ -89,9 +89,9 @@ namespace MvcCv.Controllers
             return PartialView(yorumlar);
         }
         public PartialViewResult _TopProject()
-        {
-            var enIyiProjeler = db.TblProjelerim.OrderByDescending(x => x.ProjeBegeniSayisi).ToList();
-            return PartialView(enIyiProjeler);
+        {            
+            var degerler = db.TblProjelerim.OrderByDescending(x => x.ProjeBegeniSayisi).ToList();               
+            return PartialView(degerler);
         }
     }
 }
