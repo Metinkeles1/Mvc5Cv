@@ -146,6 +146,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DeneyimController.cs" />
     <Compile Include="Controllers\EgitimController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HakkimdaController.cs" />
     <Compile Include="Controllers\HobiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2119,6 +2120,8 @@
     <Content Include="CoreBlogTema-main\web\webfonts\fa-brands-400.svg" />
     <Content Include="CoreBlogTema-main\web\webfonts\fa-regular-400.svg" />
     <Content Include="CoreBlogTema-main\web\webfonts\fa-solid-900.svg" />
+    <Content Include="errorpage\index.html" />
+    <Content Include="errorpage\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -4555,6 +4558,7 @@
     <Content Include="Views\Proje\_TopProject.cshtml" />
     <Content Include="Views\Proje\ProjeDetay.cshtml" />
     <Content Include="Views\Default\Projelerim.cshtml" />
+    <Content Include="Views\Errors\Page404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
