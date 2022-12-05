@@ -1,0 +1,39 @@
+﻿@model MvcCv.Models.Siniflarim.ProjeMesajlar
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Projeler & Yorumlar</h2>
+<br />
+<div id="accordion">
+    @foreach (var item in Model.proje)
+    {
+        <div class="card">
+            <div class="card-header bg-dark " id="heading_@item.id">
+                <form action="/ProjeMesaj/Index/@item.id" method="get">
+                    <h5 class="mb-0 ">
+                        <button class="btn text-light" type="button" data-toggle="collapse" data-target="#collapse_@item.id" aria-expanded="true" aria-controls="collapse_@item.id">
+                            @item.id) @item.ProjeName
+                        </button>
+                    </h5>
+                </form>
+            </div>
+            <div id="collapse_@item.id" class="collapse" aria-labelledby="heading_@item.id" data-parent="#accordion">
+                @foreach (var mesaj in Model.mesaj)
+                {
+                    if (mesaj.ProjeId == item.id)
+                    {
+                        <div class="card-body">
+                             @mesaj.Icerik
+                            <a class="btn btn-primary ml-4 mb-2" href="/ProjeMesaj/YorumSil/@mesaj.Id/">Sil</a>
+                        </div>
+
+                    }
+                }
+            </div>
+        </div>
+    }
+</div>

@@ -1,4 +1,5 @@
 ﻿using MvcCv.Models.Entity;
+using MvcCv.Models.Siniflarim;
 using MvcCv.Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,44 @@ using System.Web.Mvc;
 
 namespace MvcCv.Controllers
 {
+    [AllowAnonymous]
     public class ProjeMesajController : Controller
     {
         // GET: ProjeMesaj
-        
-        public ActionResult Index()
+        MesajlarRepository msjrepo = new MesajlarRepository();
+        ProjeRepository repo = new ProjeRepository();
+        DbCvEntities db = new DbCvEntities();
+        [HttpGet]
+        public ActionResult Index(int id=1)
         {
-            return View();
+            ProjeMesajlar cs = new ProjeMesajlar();
+            cs.proje = db.TblProjelerim.ToList();
+            cs.mesaj = db.TblMesajlar.ToList();            
+            return View(cs);
+        }   
+        public PartialViewResult _YorumListesi(int id)
+        {
+            var yorumlar = msjrepo.List().FindAll(x => x.ProjeId == id);
+            return PartialView(yorumlar);
         }
-      
+        [HttpGet]
+        public PartialViewResult _ProjeYorumlar(int id)
+        {
+            var projeid = id;
+            ViewBag.projeid = projeid;
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult _ProjeYorumlar(TblMesajlar p)
+        {
+            msjrepo.TAdd(p);
+            return PartialView();
+        }      
+        public ActionResult YorumSil(int id)
+        {
+            var yorum = msjrepo.Find(x=>x.Id == id);
+            msjrepo.TDelete(yorum);
+            return RedirectToAction("Index");
+        }
     }
 }

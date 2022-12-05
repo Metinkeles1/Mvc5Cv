@@ -211,6 +211,7 @@
     <Compile Include="Models\Entity\TblYeteneklerim.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Siniflarim\ProjeMesajlar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DeneyimRepository.cs" />
     <Compile Include="Repositories\EgitimRepository.cs" />
@@ -4553,16 +4554,16 @@
     <Content Include="Views\Proje\ProjeGetir.cshtml" />
     <Content Include="Views\Proje\Index.cshtml" />
     <Content Include="Views\Proje\ProjeEkle.cshtml" />
-    <Content Include="Views\Proje\_ProjeYorumlar.cshtml" />
-    <Content Include="Views\Proje\_YorumListesi.cshtml" />
+    <Content Include="Views\ProjeMesaj\_ProjeYorumlar.cshtml" />
     <Content Include="Views\Proje\_TopProject.cshtml" />
     <Content Include="Views\Proje\ProjeDetay.cshtml" />
     <Content Include="Views\Default\Projelerim.cshtml" />
     <Content Include="Views\Errors\Page404.cshtml" />
+    <Content Include="Views\ProjeMesaj\Index.cshtml" />
+    <Content Include="Views\ProjeMesaj\_YorumListesi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\Siniflarim\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

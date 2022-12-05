@@ -69,25 +69,7 @@ namespace MvcCv.Controllers
             proje.Tarih = t.Tarih;
             repo.TUpdate(proje);
             return RedirectToAction("Index");
-        }
-        [HttpGet]
-        public PartialViewResult _ProjeYorumlar(int id)
-        {
-            var projeid = id;
-            ViewBag.projeid = projeid;
-            return PartialView();
-        }
-        [HttpPost]
-        public PartialViewResult _ProjeYorumlar(TblMesajlar p)
-        {
-            msjrepo.TAdd(p);
-            return PartialView();
-        }
-        public PartialViewResult _YorumListesi(int id)
-        {
-            var yorumlar = msjrepo.List().FindAll(x=>x.ProjeId == id);            
-            return PartialView(yorumlar);
-        }
+        }     
         public PartialViewResult _TopProject()
         {            
             var degerler = db.TblProjelerim.OrderByDescending(x => x.ProjeBegeniSayisi).ToList();               
