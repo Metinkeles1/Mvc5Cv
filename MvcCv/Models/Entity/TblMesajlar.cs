@@ -20,6 +20,7 @@ namespace MvcCv.Models.Entity
         public string Konu { get; set; }
         public string Icerik { get; set; }
         public Nullable<int> ProjeId { get; set; }
+        public Nullable<bool> Durum { get; set; }
     
         public virtual TblProjelerim TblProjelerim { get; set; }
     }

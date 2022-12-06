@@ -86,6 +86,7 @@
           <Property Name="Konu" Type="varchar" MaxLength="50" />
           <Property Name="Icerik" Type="varchar(max)" />
           <Property Name="ProjeId" Type="int" />
+          <Property Name="Durum" Type="bit" />
         </EntityType>
         <EntityType Name="TblProjelerim">
           <Key>
@@ -163,14 +164,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="TblAdmin">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KullaniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="TblDeneyimlerim">
           <Key>
             <PropertyRef Name="ID" />
@@ -241,7 +234,6 @@
           <Property Name="Oran" Type="Byte" />
         </EntityType>
         <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" />
           <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" />
           <EntitySet Name="TblEgitimlerim" EntityType="Self.TblEgitimlerim" />
           <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" />
@@ -257,6 +249,7 @@
             <End Role="TblProjelerim" EntitySet="TblProjelerim" />
             <End Role="TblMesajlar" EntitySet="TblMesajlar" />
           </AssociationSet>
+          <EntitySet Name="TblAdmin" EntityType="DbCvModel.TblAdmin" />
         </EntityContainer>
         <EntityType Name="TblSosyalMedya">
           <Key>
@@ -306,6 +299,7 @@
           <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="ProjeId" Type="Int32" />
           <NavigationProperty Name="TblProjelerim" Relationship="DbCvModel.FK_TblMesajlar_TblProjelerim" FromRole="TblMesajlar" ToRole="TblProjelerim" />
+          <Property Name="Durum" Type="Boolean" />
         </EntityType>
         <Association Name="FK_TblMesajlar_TblProjelerim">
           <End Type="DbCvModel.TblProjelerim" Role="TblProjelerim" Multiplicity="0..1" />
@@ -319,21 +313,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DbCvModelStoreContainer" CdmEntityContainer="DbCvEntities">
-          <EntitySetMapping Name="TblAdmin">
-            <EntityTypeMapping TypeName="DbCvModel.TblAdmin">
-              <MappingFragment StoreEntitySet="TblAdmin">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
-                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblDeneyimlerim">
             <EntityTypeMapping TypeName="DbCvModel.TblDeneyimlerim">
               <MappingFragment StoreEntitySet="TblDeneyimlerim">
@@ -452,12 +445,22 @@
           <EntitySetMapping Name="TblMesajlar">
             <EntityTypeMapping TypeName="DbCvModel.TblMesajlar">
               <MappingFragment StoreEntitySet="TblMesajlar">
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="ProjeId" ColumnName="ProjeId" />
                 <ScalarProperty Name="Icerik" ColumnName="Icerik" />
                 <ScalarProperty Name="Konu" ColumnName="Konu" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="DbCvModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f784d71feb4b426fa2a3bbabdb946457" Name="Diagram1">
-        <EntityTypeShape EntityType="DbCvModel.TblAdmin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TblDeneyimlerim" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TblEgitimlerim" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TblHakkimda" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
@@ -18,6 +17,7 @@
         <EntityTypeShape EntityType="DbCvModel.sysdiagrams" Width="1.5" PointX="9.375" PointY="6.75" />
         <EntityTypeShape EntityType="DbCvModel.TblMesajlar" Width="1.5" PointX="0.5" PointY="7.5" />
         <AssociationConnector Association="DbCvModel.FK_TblMesajlar_TblProjelerim" />
+        <EntityTypeShape EntityType="DbCvModel.TblAdmin" Width="1.5" PointX="0.75" PointY="1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

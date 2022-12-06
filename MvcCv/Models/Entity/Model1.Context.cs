@@ -25,7 +25,6 @@ namespace MvcCv.Models.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TblAdmin> TblAdmin { get; set; }
         public virtual DbSet<TblDeneyimlerim> TblDeneyimlerim { get; set; }
         public virtual DbSet<TblEgitimlerim> TblEgitimlerim { get; set; }
         public virtual DbSet<TblHakkimda> TblHakkimda { get; set; }
@@ -37,5 +36,6 @@ namespace MvcCv.Models.Entity
         public virtual DbSet<TblProjelerim> TblProjelerim { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TblMesajlar> TblMesajlar { get; set; }
+        public virtual DbSet<TblAdmin> TblAdmin { get; set; }
     }
 }

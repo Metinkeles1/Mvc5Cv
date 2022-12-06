@@ -26,7 +26,7 @@ namespace MvcCv.Controllers
         }   
         public PartialViewResult _YorumListesi(int id)
         {
-            var yorumlar = msjrepo.List().FindAll(x => x.ProjeId == id);
+            var yorumlar = msjrepo.List().FindAll(x => x.ProjeId == id).Where(x=>x.Durum==true).ToList();
             return PartialView(yorumlar);
         }
         [HttpGet]
@@ -38,14 +38,15 @@ namespace MvcCv.Controllers
         }
         [HttpPost]
         public PartialViewResult _ProjeYorumlar(TblMesajlar p)
-        {
+        {            
             msjrepo.TAdd(p);
             return PartialView();
         }      
         public ActionResult YorumSil(int id)
         {
             var yorum = msjrepo.Find(x=>x.Id == id);
-            msjrepo.TDelete(yorum);
+            yorum.Durum = !yorum.Durum;
+            msjrepo.TUpdate(yorum);
             return RedirectToAction("Index");
         }
     }
