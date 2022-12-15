@@ -6,35 +6,35 @@
 }
 
 <br />
-<h4>Yeni Proje Ekleme Sayfası</h4>
+<h4>Update Project Page</h4>
 <br />
 <form method="post">
     <br />
-    @Html.Label("Başlık")
+    @Html.Label("Title")
     @Html.TextBoxFor(x => x.ProjeName, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.ProjeName, "", new { @style = "color:red" })
     <br />
-    @Html.Label("Proje Açıklama")
+    @Html.Label("Project Explanation")
     @Html.TextAreaFor(x => x.ProjeAciklama, new { @class = "form-control", @rows = 4 })
     @Html.ValidationMessageFor(x => x.ProjeName, "", new { @style = "color:red" })
     <br />
-    @Html.Label("Proje Resim 1")
+    @Html.Label("Project Picture 1")
     @Html.TextBoxFor(x => x.ProjeResim1, new { @class = "form-control" })    
     <br />
-    @Html.Label("Proje Resim 2")
+    @Html.Label("Project Picture 2")
     @Html.TextBoxFor(x => x.ProjeResim2, new { @class = "form-control" })    
     <br />
-    @Html.Label("Proje Resim 2 Açıklama")
+    @Html.Label("Project Picture 2 Explanation")
     @Html.TextAreaFor(x => x.ProjeResim2Açıklama, new { @class = "form-control", @rows = 2 })
     <br />
-    @Html.Label("Proje Resim 3")
+    @Html.Label("Project Picture 3")
     @Html.TextBoxFor(x => x.ProjeResim3Açıklama, new { @class = "form-control" })
     <br />
-    @Html.Label("Proje Linki")
+    @Html.Label("Project Link")
     @Html.TextBoxFor(x => x.ProjeLink, new { @class = "form-control" })
     <br />
-    @Html.Label("Tarih")
+    @Html.Label("Date")
     @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">Güncelle</button>
+    <button class="btn btn-info">Update</button>
 </form>

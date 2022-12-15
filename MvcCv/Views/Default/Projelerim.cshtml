@@ -1,8 +1,8 @@
 ﻿@using MvcCv.Models.Entity
-@*@model List<TblProjelerim>*@
-@using PagedList
+@model List<TblProjelerim>
+@*@using PagedList
 @using PagedList.Mvc
-@model PagedList.IPagedList<TblProjelerim>
+@model PagedList.IPagedList<TblProjelerim>*@
 
 @{
     Layout = null;
@@ -18,23 +18,23 @@
                     <h4 class="card-title">@item.ProjeName</h4>
                     <p class="card-text">@item.ProjeAciklama.Substring(0, item.ProjeAciklama.Substring(0, 150).LastIndexOf(" "))...</p>
                     <div class="d-flex justify-content-end">
-                        <a class="btn btn-success text-white" href="/Proje/ProjeDetay/@item.id">Detayları Gör</a>
+                        <a class="btn btn-success text-white" href="/Proje/ProjeDetay/@item.id">Show Details</a>
                     </div>
                 </div>
-                <div class="card-footer">
+                @*<div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+                </div>*@
             </div>
         </div>
     }
 
 </div>
 
-@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Projelerim", new { sayfa }), new PagedListRenderOptions
+@*@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Projelerim", new { sayfa }), new PagedListRenderOptions
 {
     LiElementClasses = new List<string>
     { "page-link"}
-})
+})*@
 
 
 

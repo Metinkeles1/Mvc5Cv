@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using MvcCv.Models.Entity;
-using MvcCv.Repositories;
+﻿using MvcCv.Models.Entity;
 using PagedList;
-using PagedList.Mvc;
+using System;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace MvcCv.Controllers
 {
@@ -76,9 +72,14 @@ namespace MvcCv.Controllers
         //}       
         public ActionResult Projelerim(int sayfa = 1)
         {
-            var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);
-            //var projeler = db.TblProjelerim.ToList();
+            //var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);
+            var projeler = db.TblProjelerim.ToList();
             return View(projeler);
         }
+        //public ActionResult Projelerim2(int sayfa = 1)
+        //{
+        //    var projeler = db.TblProjelerim.ToList().ToPagedList(sayfa, 3);            
+        //    return View(projeler);
+        //}
     }
 }

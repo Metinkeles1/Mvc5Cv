@@ -5,20 +5,18 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>SertifikaGetir</h2>
-
 <br />
-<h4>Sertifika Düzenleme Sayfası</h4>
+<h4>Edit Sertificate Page</h4>
 <form method="post">
     <br />
-    @Html.Label("Sertifika Açıklaması")
+    @Html.Label("Sertificate Explanation")
     @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
     <br />
-    @Html.Label("Tarih")
+    @Html.Label("Date")
     @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
     <br />
-    <button class="btn btn-success">Güncelle</button>
-    <a href="/Sertifika/SertifikaSil/@Model.ID" class="btn btn-danger">Sil</a>
+    <button class="btn btn-success">Update</button>
+    <a href="/Sertifika/SertifikaSil/@Model.ID" class="btn btn-danger">Delete</a>
 </form>
 
 

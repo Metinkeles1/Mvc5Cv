@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcCv.Controllers
 {
@@ -74,6 +76,6 @@ namespace MvcCv.Controllers
         {            
             var degerler = db.TblProjelerim.OrderByDescending(x => x.ProjeBegeniSayisi).ToList();               
             return PartialView(degerler);
-        }
+        }      
     }
 }

@@ -5,19 +5,19 @@
 }
 
 <br />
-<h4>Yeni Sertifika Ekleme Sayfası</h4>
+<h4>Add New Sertificate Page</h4>
 <br />
 <form method="post">
     <br />
-    @Html.Label("Açıklama")
+    @Html.Label("Explanation")
     @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.Aciklama, "", new { @style = "color:red" })
     <br />
-    @Html.Label("Tarih")
+    @Html.Label("Date")
     @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.Tarih, "", new { @style = "color:blue" })
     <br />
-    <button class="btn btn-info">Kaydet</button>
+    <button class="btn btn-info">Save</button>
 </form>
 
 

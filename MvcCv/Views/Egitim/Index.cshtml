@@ -6,17 +6,17 @@
 }
 
 <br />
-<h2>Eğitim Listesi</h2>
+<h2>Education List</h2>
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
-        <th>Başlık</th>
-        <th>Alt Başlık</th>
-        <th>Alt Başlık 2</th>
+        <th>Title</th>
+        <th>Subtitle</th>
+        <th>Subtitle 2</th>
         <th>GNO</th>
-        <th>Tarih</th>
-        <th>Sil</th>
-        <th>Düzenle</th>
+        <th>Date</th>
+        <th>Delete</th>
+        <th>Edit</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -30,17 +30,17 @@
             <td>
                 <a href="/Egitim/EgitimSil/@item.ID" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash-alt"></i>
-                    Sil
+                    Delete
                 </a>
             </td>
             <td>
                 <a href="/Egitim/EgitimDuzenle/@item.ID" class="btn btn-info btn-sm">
                     <i class="fas fa-pencil-alt"></i>
-                    Düzenle
+                    Edit
                 </a>
             </td>
         </tr>
     }
 </table>
 
-<a href="/Egitim/EgitimEkle" class="btn btn-primary">Yeni Eğitim Ekle</a>
+<a href="/Egitim/EgitimEkle" class="btn btn-primary">Add New Education</a>

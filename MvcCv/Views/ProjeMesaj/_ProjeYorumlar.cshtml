@@ -1,17 +1,17 @@
 ﻿
 <div class="comment-top">
-    <h4>Yorum Yap</h4>
+    <h4>Add Comment</h4>
     <div class="comment-bottom">
         <form method="post">
             <input type="hidden" name="ProjeId" value="@ViewBag.projeid"/>
             <input class="form-control text-dark" type="hidden" name="Durum" value="True">
-            <input class="form-control text-dark" type="text" name="AdSoyad" placeholder="Ad Soyad" required="">
+            <input class="form-control text-dark" type="text" name="AdSoyad" placeholder="Fullname" required="">
             <input class="form-control text-dark" type="email" name="Mail" placeholder="Email" required="">
 
-            <input class="form-control text-dark" type="text" name="Konu" placeholder="Konu" required="">
+            <input class="form-control text-dark" type="text" name="Konu" placeholder="Subject" required="">
 
-            <textarea class="form-control text-dark" name="Icerik" placeholder="Mesaj" required=""></textarea>
-            <button type="submit" class="btn btn-primary submit my-2">Gönder</button>
+            <textarea class="form-control text-dark" name="Icerik" placeholder="Message" required=""></textarea>
+            <button type="submit" class="btn btn-primary submit my-2">Send</button>
         </form>
     </div>
 </div>

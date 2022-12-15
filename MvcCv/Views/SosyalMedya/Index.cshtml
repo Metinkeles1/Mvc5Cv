@@ -19,21 +19,21 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Sosyal Medya Hesap Listem</h3>
+                                <h3 class="card-title">My Social Media Account List</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <button class="btn btn-info" data-toggle="modal" data-target="#Modal1">Yeni Sosyal Medya Hesabı Ekle</button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#Modal1">Add New Social Media Account</button>
                                 <br />
                                 <br />
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
                                             <th style="width: 10px">#</th>                                                                                  
-                                            <th>Sosyal Medya</th>
-                                            <th>Durum</th>
-                                            <th>Düzenle</th>
-                                            <th>Sil</th>
+                                            <th>Social Media</th>
+                                            <th>Status</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -44,21 +44,21 @@
                                             <td>@item.Ad</td>
                                             @if(item.Durum == true)
                                             {
-                                            <td class="text-success">Aktif</td>
+                                            <td class="text-success">Active</td>
                                             }
                                             else{
-                                            <td class="text-danger">Pasif</td>
+                                            <td class="text-danger">Deactive</td>
                                             }
                                             <td>
                                                 <a href="/SosyalMedya/SosyalMedyaGetir/@item.ID" class="btn btn-info btn-sm">
                                                     <i class="fas fa-pencil-alt"></i>
-                                                    Düzenle
+                                                    Edit
                                                 </a>
                                             </td>
                                             <td>
                                                 <a href="/SosyalMedya/Sil/@item.ID" class="btn btn-danger btn-sm">
                                                     <i class="fas fa-trash-alt"></i>
-                                                    Sil
+                                                    Delete
                                                 </a>
                                             </td>
                                         </tr>
@@ -76,20 +76,20 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title">Sosyal Medya Ekleme Penceresi</h2>
+                        <h2 class="modal-title">Add New Social Media Account</h2>
                     </div>
                     <form action="/SosyalMedya/Ekle" method="post">
                         <div class="modal-body">
-                            <label>Sosyal Medya İsmi</label>
+                            <label>Social Media Name</label>
                             <input type="text" name="Ad" class="form-control" />
                             <br />
-                            <label>Sosyal Medya Linki</label>
+                            <label>Social Media Link</label>
                             <input type="text" name="Link" class="form-control" />
                             <br />
-                            <label>İkon Değeri</label>
+                            <label>İcon</label>
                             <input type="text" name="Ikon" class="form-control" />
                             <br />
-                            <button class="btn btn-info">Kaydet</button>
+                            <button class="btn btn-info">Save</button>
                         </div>
                     </form>
                 </div>

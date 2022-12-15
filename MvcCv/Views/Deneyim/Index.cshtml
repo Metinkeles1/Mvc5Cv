@@ -6,15 +6,15 @@
 }
 
 <br />
-<h2>Deneyim Listesi</h2>
+<h2>Experience List</h2>
 <table class="table table-bordered">
     <tr>
         <th>ID</th>        
-        <th>Başlık</th>        
-        <th>Alt Başlık</th>
-        <th>Tarih</th>
-        <th>Sil</th>
-        <th>Düzenle</th>
+        <th>Title</th>        
+        <th>Subtitle</th>
+        <th>Date</th>
+        <th>Delete</th>
+        <th>Edit</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -23,10 +23,10 @@
             <td>@item.Baslik</td>
             <td>@item.AltBaslik</td>
             <td>@item.Tarih</td>
-            <td><a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-warning">Düzenle</a></td>
+            <td><a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-warning">Edit</a></td>
         </tr>
     }
 </table>
 
-<a href="/Deneyim/DeneyimEkle" class="btn btn-primary">Yeni Deneyim Ekle</a>
+<a href="/Deneyim/DeneyimEkle" class="btn btn-primary">Add New Experience</a>

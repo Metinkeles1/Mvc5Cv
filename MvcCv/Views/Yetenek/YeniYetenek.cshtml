@@ -6,17 +6,17 @@
 
 
 <br />
-<h4>Yeni Yetenek Ekleme Sayfası</h4>
+<h4>Add New Skill Page</h4>
 <br />
 <form method="post">
     <br />
-    @Html.Label("Yetenek Açıklaması")
+    @Html.Label("Skill Explanation")
     @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
     <br />
-    @Html.Label("Derece")
+    @Html.Label("Ratio")
     @Html.TextBoxFor(x => x.Oran, new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">Kaydet</button>
+    <button class="btn btn-info">Save</button>
 </form>
 
 

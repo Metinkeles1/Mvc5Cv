@@ -6,19 +6,19 @@
 }
 
 <br />
-<h4>Admin Güncelleme Sayfası</h4>
+<h4>Update Admin Page</h4>
 <br />
 <form method="post">
     @Html.Label("Admin ID")
     @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
     <br />
-    @Html.Label("Kullanıcı Adı")
+    @Html.Label("User Name")
     @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
     <br />
-    @Html.Label("Şifre")
+    @Html.Label("Passowrd")
     @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
     <br />   
-    <button class="btn btn-info">Güncelle</button>
+    <button class="btn btn-info">Update</button>
 </form>
 
 

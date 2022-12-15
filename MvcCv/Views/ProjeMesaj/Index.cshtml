@@ -8,7 +8,7 @@
 }
 
 <br />
-<h2>Projeler & Yorumlar</h2>
+<h2>Projects & Comments</h2>
 <br />
 <div id="accordion">
     @foreach (var item in Model.proje)
@@ -28,11 +28,11 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>Konu</th>
+                            <th>Subject</th>
                             <th>Mail</th>
-                            <th>İçerik</th>
-                            <th>Durum</th>
-                            <th>Ayarlar</th>
+                            <th>Contents</th>
+                            <th>Status</th>
+                            <th>Settings</th>
                         </tr>
                     </thead>
                     @foreach (var mesaj in Model.mesaj)
@@ -51,22 +51,22 @@
                                 <td>@mesaj.Icerik</td>
                                 @if (mesaj.Durum == true)
                                 {
-                                    <td class="text-success">Aktif</td>
+                                    <td class="text-success">Active</td>
                                 }
                                 else
                                 {
-                                    <td class="text-danger">Pasif</td>
+                                    <td class="text-danger">Deactive</td>
                                 }
                                 <td>
                                     @if (mesaj.Durum == true)
                                     {
                                         Durum = "btn-primary";
-                                        value = "Gizle";
+                                        value = "Hide";
                                     }
                                     else
                                     {
                                         Durum = "btn-warning ";
-                                        value = "Göster";
+                                        value = "Show";
                                     }
                                     <a href="/ProjeMesaj/YorumSil/@mesaj.Id" class="btn @Durum btn-sm">
                                         <i class="fas fa-pencil-alt"></i>

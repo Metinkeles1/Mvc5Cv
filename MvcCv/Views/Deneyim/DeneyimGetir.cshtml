@@ -5,24 +5,24 @@
 }
 
 <br />
-<h4>Yeni Deneyim Ekleme Sayfası</h4>
+<h4>Add New Experience Page</h4>
 <br />
 <form method="post">
-    @Html.Label("Deneyim ID")
+    @Html.Label("Experince ID")
     @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
     <br />
-    @Html.Label("Başlık")
+    @Html.Label("Title")
     @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
     <br />
-    @Html.Label("Alt Başlık")
+    @Html.Label("Subtitle")
     @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
     <br />
-    @Html.Label("Tarih")
+    @Html.Label("Date")
     @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
     <br />
-    @Html.Label("Açıklama")
+    @Html.Label("Comment")
     @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">Kaydet</button>
+    <button class="btn btn-info">Save</button>
 </form>
 
